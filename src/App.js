@@ -1,5 +1,6 @@
-//css
+//style
 import './App.css';
+// import 'https://use.typekit.net/gvm0qti.css'
 
 //pakidge
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'

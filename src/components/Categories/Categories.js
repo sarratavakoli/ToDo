@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import axios from 'axios'
 import SingleCategory from './SingleCategory';
+import './Categories.css'
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
@@ -19,14 +20,14 @@ export default function Categories() {
 
   return (
     <section className="categories">
-      <article className="bg-info p-5">
-        <h1 className="text-center">Categories</h1>
+      <article className="p-5">
+        <h1 className="text-center text-uppercase">categories</h1>
       </article>
       <Container className="p-2">
         <table className="table bg-info table-dark mt-3 mb-3">
           <thead className="table-secondary text-uppercase">
             <tr>
-              <th>Name</th>
+              <th>Category</th>
               <th>Description</th>
             </tr>
           </thead>

@@ -21,17 +21,17 @@ export default function Login() {
 
   return (
     <div className="login">
-      <article className='bg-info mb-5 p-5 text-dark'>
+      <article className='mt-5 mb-5 p-5 text-dark'>
         <h1 className='text-center'>Welcome!</h1>
       </article>
 
       <Container>
-        <Card className='m-2 border-dark text-center'>
+        <Card className='m-2 border-dark text-center col-md-6 m-auto'>
           <Card.Header className='bg-dark text-white'>
             <h2>Login for full functionality</h2>
           </Card.Header>
           <Card.Body>
-            <button className='btn btn-success' onClick={() => handleAuth()}>
+            <button className='btn btn-danger' onClick={() => handleAuth()}>
               Login w/Github
             </button>
           </Card.Body>

@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
   const { currentUser } = useAuth();
   return (
-    <div className="footer">
+    <div className="footer">      
+      <footer className="text-center text-white p-4">
       {currentUser && <>
-        <Link to="/categories" className="text-lowercase m-0 p-0"><h6>view categories</h6></Link>
+        <Link to="/categories" className="text-lowercase text-white"><h6>view categories</h6></Link>
       </>}
-      <footer className="text-center text-white bg-info p-4">
         <strong>&copy; {new Date().getFullYear()} All Rights Reserved</strong>
       </footer>
     </div>

@@ -4,10 +4,12 @@ import { Container } from 'react-bootstrap'
 import SingleToDo from './SingleToDo'
 import './ToDos.css'
 import FilterToDo from './FilterToDo';
+import { useAuth } from '../../contexts/AuthContext'
 
 export default function ToDos() {
   const [toDos, setToDos] = useState([]);
   const [filter, setFilter] = useState(0);
+  const { currentUser } = useAuth();
 
   const getToDos = () => {
 
@@ -24,6 +26,7 @@ export default function ToDos() {
 
   return (
     <section className="todos">
+        {currentUser && <>
       <FilterToDo setFilter={setFilter} />
       <Container className="p-2">
         <article className="ToDoCards row justify-content-center">
@@ -33,13 +36,16 @@ export default function ToDos() {
           {filter === 0 ?
             toDos.map(x => <SingleToDo key={x.toDoId} toDo={x} />) :
             toDos.filter(x => x.categoryId === filter).map(x => <SingleToDo key={x.toDoId} toDo={x} />)}
+            
           {filter !== 0 && toDos.filter(x => x.categoryId === filter).length === 0 &&
             <h2 className="alert alert-warning text-dark">
               There are no results to display for this category.
             </h2>
           }
-        </article>
+        </article> 
+
       </Container>
+      </>}
     </section>
   )
 }

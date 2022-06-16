@@ -31,7 +31,10 @@ export default function Navigation() {
         </>}
         
       </Navbar.Brand>
-      <Navbar.Toggle />
+      {/* <Navbar.Toggle /> */}
+          <div className="text-white text-center w-100 titleFont">
+          ToDo
+        </div>
       <Navbar.Collapse className="justify-content-end">
         <Nav>
           {/* {currentUser &&
@@ -40,6 +43,7 @@ export default function Navigation() {
               <Link to="/categories" className="nav-link">Categories</Link>
             </>
           } */}
+          
           <div className="text-white text-right navbar-brand">
             {/* {new Date().getFullYear()} */}
             <TodaysDate />

@@ -13,6 +13,7 @@
   text-align: center;
   min-height: 83vh;
   margin-bottom: 0 !important;
+  background-color: #F0EDE6;
 }
 
 .flex-wrapper {
@@ -28,4 +29,12 @@
 
 .navbar-brand h6 {
   text-align: left !important;
+  color: #F7AEA2;
+}
+
+.titleFont {
+  font-family: corner-store-jf, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4em;
 }

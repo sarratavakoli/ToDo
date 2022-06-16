@@ -1,4 +1,17 @@
 .singleToDo { 
-    border: 1px solid #000000;
-    border-radius: 10px;    
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid black;
+    /* font-family: "Corner Store JF" !important; */
+     
+}
+
+footer {
+    background-color: black;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
 }
