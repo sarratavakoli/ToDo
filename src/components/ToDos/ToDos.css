@@ -1,17 +1,76 @@
-.singleToDo { 
+.todo-gallery {
+    position: relative;
+}
+
+/* creates background styling for To Do List items */
+.singleToDo {
     background-color: #ffffff;
     color: #000000;
     border: 2px solid black;
-    /* font-family: "Corner Store JF" !important; */
-     
+    position: relative;
 }
 
-footer {
+#editLink {
+    background-color: transparent;
+    border: none
+}
+
+.singleToDo svg {
+    position: absolute;
+    right: -.5em;
+    top: -.5em;    
+    background-color: #ffffff;
+    width: 2em;
+    height: 2em;
+    border-radius: 20px;
+}
+
+
+.filter-container {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.todo-header {
+    text-align: left;
+    font-size: 1.7em;
+    text-transform: lowercase;
+}
+
+/* provides footer background and link styling */
+footer,
+footer a {
     background-color: black;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
 }
 
-.footer a {
-    text-decoration: none;
-    color: black;
-    font-size: 1em;
+/* provides filter dropdown menu styling */
+.custom-dropdown {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-radius: 0 !important;
+}
+
+/* dropdown is the class assigned by the React-Boostrap Dropdown component */
+/* left alignment is for filter dropdown to appear on top right */
+.dropdown {
+    text-align: right;
+}
+
+/* gutter must be removed to allow even right-alignment of filter dropdown & To Do items */
+.row {
+    --bs-gutter-x: 0 !important;
+}
+
+#editLink:hover, #deleteLink:hover {
+    background-color: white;
+    color: red;
+    border-color: red;
+}
+
+.quick-add-container {
+    padding-top: 2em;
+    padding-bottom: 2em;
 }

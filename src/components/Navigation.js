@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext'
 import '../App.css'
 import Logout from './Auth/Logout'
 import Login from './Auth/Login'
-import TodaysDate from '../Utilities/todaysDate'
+import TodaysDate from '../utilities/todaysDate'
 
 export default function Navigation() {
     const { currentUser } = useAuth();
@@ -33,7 +33,7 @@ export default function Navigation() {
       </Navbar.Brand>
       {/* <Navbar.Toggle /> */}
           <div className="text-white text-center w-100 titleFont">
-          ToDo
+          todo
         </div>
       <Navbar.Collapse className="justify-content-end">
         <Nav>
