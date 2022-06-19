@@ -1,41 +1,22 @@
-.site-container {
-  text-align: left;
-  width: 85%;
-  margin: auto;
-  background-color: transparent !important;
-}
-
-.main-section {
-  margin: 2.5rem;
-}
-
+/* Main styling */
 .App {
   text-align: center;
-  min-height: 83vh;
   margin-bottom: 0 !important;
   background-color: #F0EDE6;
   font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-style: normal;  
   text-transform: lowercase;
+  min-height: 100vh;
 }
 
+/* Flex wrapper enables sticky footer */
 .flex-wrapper {
   display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: flex-start;
+  height: 100%;
 }
 
-.footer {
-  margin-top: auto;
-}
-
-.navbar-brand h6 {
-  text-align: left !important;
-  color: #F7AEA2;
-}
-
+/* Navbar title text styling */
 .titleFont {
   /* font-family: 'Mulish', corner-store-jf, sans-serif; */
   font-family: 'Mulish', sans-serif;
@@ -43,3 +24,10 @@
   font-style: normal;
   font-size: 4em;
 }
+
+/* Footer styling - sticky to bottom */
+/* .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+} */

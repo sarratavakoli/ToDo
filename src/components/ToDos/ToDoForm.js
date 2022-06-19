@@ -50,20 +50,20 @@ export default function ToDoForm(props) {
     {({errors, touched}) => (
         <Form id="toDoForm">
             <div className="form-group m-3">
-                <Field name="name" className="form-control" placeholder="Name" />
+                <Field name="name" className="form-control" placeholder="name" />
                 {errors.name && touched.name ? (
                     <div className="text-danger">{errors.name}</div>
                 ) : null}
             </div>
             <div className="form-group m-3">
-                <Field name="details" className="form-control" placeholder="Details" />
+                <Field component="textarea" rows="4" name="details" className="form-control" placeholder="details" />
                 {errors.details && touched.details ? (
                     <div className="text-danger">{errors.details}</div>
                 ) : null}
             </div>
             <div className="form-group m-3">
                 <Field as="select" name="categoryId" className="form-control">
-                <option value="" disabled>[--Please choose--]</option>
+                <option value="" disabled>category</option>
                 {categories.map(cat =>
                     <option key={cat.categoryId} value={cat.categoryId}>
                         {cat.catName}
@@ -79,7 +79,7 @@ export default function ToDoForm(props) {
                 ) : null}
             </div>
             <div className="form-group m-3">
-                <button type="submit" className="btn btn-info m-3">
+                <button type="submit" className="btn btn-custom m-3">
                     {!props.toDo ? "Add " : "Update "} ToDo</button>
             </div>
         </Form>

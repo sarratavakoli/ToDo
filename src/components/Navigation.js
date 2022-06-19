@@ -11,7 +11,7 @@ export default function Navigation() {
     const { currentUser } = useAuth();
     
   return (
-    <Navbar expand="md" bg="dark" variant="dark" className="p-3">
+    <Navbar expand="md" bg="dark" variant="dark" className="p-3" sticky="top">
       <Navbar.Brand href="/"> 
 
         {currentUser && 

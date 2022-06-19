@@ -10,7 +10,7 @@ export default function SingleToDo(props) {
         }
     }
     return (
-        <div className="singleToDo col-md-7 mb-3 mt-2">
+        <div className="singleToDo mb-3 mt-2">
             <div className="p-2">
                 <span onClick={() => deleteToDo(props.toDo.toDoId)} alt="x mark">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-circle" viewBox="0 0 16 16">
@@ -29,7 +29,7 @@ export default function SingleToDo(props) {
                 }
                 <h5>{props.toDo.name}&nbsp;
                 <button id="editLink" className="d-inline" onClick={() => setShowEdit(true)}>
-                <i style={{ fontSize: 14 }} class="bi bi-gear"></i>
+                <i style={{ fontSize: 14 }} class="bi bi-"></i>
                 </button></h5>
                 {props.toDo.details !== null ?
                     <p>{props.toDo.details}</p> :

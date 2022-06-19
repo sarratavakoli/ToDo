@@ -21,10 +21,10 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-          <div className="flex-wrapper">
-            {/* <Header /> */}
+          {/* <Header /> */}
 
-            <Navigation />
+          <Navigation />
+          <div className="flex-wrapper">
             <Routes>
               <Route path="/" element={<ToDos />} />
               <Route path="/todos" element={<ToDos />} />
@@ -34,8 +34,8 @@ function App() {
             </Routes>
 
 
-            <Footer />
           </div>
+          <Footer />
         </Router>
       </AuthProvider>
     </div>

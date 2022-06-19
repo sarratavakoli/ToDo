@@ -5,10 +5,15 @@ import { Dropdown } from 'react-bootstrap'
 export default function FilterToDo(props) {
   const [categories, setCategories] = useState([]);
   const [filterCat, setFilterCat] = useState(`all`);
+
   const updateItem = (catId, catName) => {
     props.setFilter(catId);
     setFilterCat(catName);
-  } 
+  }
+
+  const updateStatus = (done) => {
+    props.setCompletion(done);
+  }
 
   useEffect(() => {
     axios.get(`https://localhost:7105/api/Categories`).then(response => {
@@ -19,29 +24,42 @@ export default function FilterToDo(props) {
   }, []);
 
   return (
-    <div className="col-md-7 filter-container">
+    <div className="filter-container">
       <div className="row">
-        <div className="col-md-7 todo-header">
+        <div className="col-md-6 todo-header">
           {filterCat} tasks
         </div>
-        <div className="col-md-5">
+
+        <div className="col-md-6 dropdown-container">
+          <Dropdown >
+            <Dropdown.Toggle className="custom-dropdown" >
+              status
+            </Dropdown.Toggle>
+            <Dropdown.Menu >
+              <Dropdown.Item onClick={() => updateStatus(null)}>All</Dropdown.Item>
+              <Dropdown.Item onClick={() => updateStatus(false)}>Incomplete</Dropdown.Item>
+              <Dropdown.Item onClick={() => updateStatus(true)}>Complete</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
           <Dropdown>
             <Dropdown.Toggle className="custom-dropdown" >
               category
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item onClick={() => 
-                updateItem(0, "All")}>All</Dropdown.Item>             
+              <Dropdown.Item onClick={() =>
+                updateItem(0, "All")}>All</Dropdown.Item>
 
 
               {categories.map(cat =>
-                <Dropdown.Item key={cat.categoryId} onClick={() => 
-                updateItem(Number(cat.categoryId), cat.catName)}>{cat.catName}
+                <Dropdown.Item key={cat.categoryId} onClick={() =>
+                  updateItem(Number(cat.categoryId), cat.catName)}>{cat.catName}
                 </Dropdown.Item>)}
-                <Dropdown.Divider />
 
+              {/* Use this if we want to add Create Category to Filter Dropdown
+              <Dropdown.Divider />
+              <Dropdown.Item>Add new category</Dropdown.Item> */}
 
-              <Dropdown.Item>Add new category</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>

@@ -1,5 +1,6 @@
 .todo-gallery {
-    position: relative;
+    /* position: relative; */
+    padding: 3em;
 }
 
 /* creates background styling for To Do List items */
@@ -17,8 +18,8 @@
 
 .singleToDo svg {
     position: absolute;
-    right: -.5em;
-    top: -.5em;    
+    right: -17px;
+    top: -16px;
     background-color: #ffffff;
     width: 2em;
     height: 2em;
@@ -48,9 +49,11 @@ footer a {
 
 /* provides filter dropdown menu styling */
 .custom-dropdown {
-    background-color: #000000 !important;
-    color: #ffffff !important;
+    background-color: white !important;
+    color: black !important;
     border-radius: 0 !important;
+    border: 2px solid black !important;
+    margin-bottom: 6px;
 }
 
 /* dropdown is the class assigned by the React-Boostrap Dropdown component */
@@ -64,13 +67,52 @@ footer a {
     --bs-gutter-x: 0 !important;
 }
 
-#editLink:hover, #deleteLink:hover {
+#editLink:hover,
+#deleteLink:hover {
     background-color: white;
     color: red;
     border-color: red;
 }
 
 .quick-add-container {
-    padding-top: 2em;
+    padding-top: 1em;
     padding-bottom: 2em;
+}
+
+.dropdown {
+    display: inline;
+    padding-left: 6px;
+}
+
+.dropdown-container {
+    text-align: right !important;
+}
+
+.btn-custom {
+    color: #fff !important;
+    background-color: rgb(223, 84, 160) !important;
+    border-color: none;
+    border-radius: 0 !important;
+
+}
+
+.sidebar-container {
+    background: rgb(223, 84, 160);
+}
+
+.todos {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.page-body {
+    min-height: 76vh;
+}
+
+@media only screen and (max-width: 1200px) {
+    .disappearing-column {
+        display: none;
+    }
 }
