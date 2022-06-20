@@ -6,9 +6,10 @@
 /* creates background styling for To Do List items */
 .singleToDo {
     background-color: #ffffff;
-    color: #000000;
     border: 2px solid black;
     position: relative;
+    margin-bottom: 2rem !important;
+    text-align: left;
 }
 
 #editLink {
@@ -18,8 +19,8 @@
 
 .singleToDo svg {
     position: absolute;
-    right: -17px;
-    top: -16px;
+    right: -9px;
+    top: -8px;
     background-color: #ffffff;
     width: 2em;
     height: 2em;
@@ -69,7 +70,7 @@ footer a {
 
 #editLink:hover,
 #deleteLink:hover {
-    background-color: white;
+    /* background-color: white; */
     color: red;
     border-color: red;
 }
@@ -93,7 +94,7 @@ footer a {
     background-color: rgb(223, 84, 160) !important;
     border-color: none;
     border-radius: 0 !important;
-
+    min-width: 90px;
 }
 
 .sidebar-container {
@@ -115,4 +116,51 @@ footer a {
     .disappearing-column {
         display: none;
     }
+}
+
+.singleToDo p {
+    margin-bottom: 0px;
+}
+
+/* styling completed to do items via completed class on todo container div */
+
+.completed {
+    color: gray;
+    text-decoration:line-through;
+}
+
+div.completed {
+    border: 2px solid gray;
+    background-color: rgb(233, 231, 229);
+}
+
+.completed i {
+    color: gray;
+}
+
+.form-control {
+    border-radius: 0 !important;
+    border: 2px solid black !important;
+}
+
+.create-container {
+    background-color: white;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.createToDo {
+    padding-top: .5em;
+}
+
+.no-border {
+    border: none;
+}
+
+.custom-checkbox {
+    font-size: 1.3em;
+}
+
+.edit-header {
+    padding-left: .7em;
 }

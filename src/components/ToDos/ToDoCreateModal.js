@@ -9,15 +9,15 @@ export default function ToDoEdit(props) {
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
-            show={props.showEdit}
-            onHide={() => props.setShowEdit(false)}>
+            show={props.showCreateModal}
+            onHide={() => props.setShowCreateModal(false)}>
             <Modal.Header closeButton>
-                <h4 className="edit-header">editing task '{props.toDo.name.toLowerCase()}'</h4>
+                <h4>add task</h4>
             </Modal.Header>
             <Modal.Body>
                 <ToDoForm
                     toDo={props.toDo}
-                    setShowEdit={props.setShowEdit}
+                    setShowCreateModal={props.setShowCreateModal}
                     getToDos={props.getToDos} />
             </Modal.Body>
         </Modal>

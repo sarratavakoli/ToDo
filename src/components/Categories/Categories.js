@@ -22,23 +22,23 @@ export default function Categories() {
   useEffect(() => { getCategories() }, [])
 
   return (
-    <section className="categories">
+    <section className="categories  m-auto">
       <article className="p-5">
         <h1 className="text-center text-uppercase">categories</h1>
       </article>
-      <div className="bg-dark p-2 mb-3 text-center">
+      <div className="p-2 mb-3 text-center">
         {showCreate ?
           <>
-            <button onClick={() => setShowCreate(false)} className="btn btn-warning">Cancel</button>
+            <button onClick={() => setShowCreate(false)} className="btn btn-custom">Cancel</button>
             <CatCreate
               getCategories={getCategories}
               setShowCreate={setShowCreate} />
           </>
-          : <button className="btn btn-secondary" onClick={() => setShowCreate(true)}>Add Category</button>}
+          : <button className="btn btn-custom" onClick={() => setShowCreate(true)}>Add Category</button>}
       </div>
       
       <Container className="p-2">
-        <table className="table bg-info table-dark mt-3 mb-3">
+        <table className="table bg-info table-light mt-3 mb-3">
           <thead className="table-secondary text-uppercase">
             <tr>
               <th>Category</th>

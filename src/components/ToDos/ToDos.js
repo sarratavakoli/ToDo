@@ -23,9 +23,10 @@ export default function ToDos() {
   const getToDos = () => {
 
     axios.get(`https://localhost:7105/api/ToDos`).then(response => {
-
-      console.log(response)
-      setToDos(response.data);
+      const arr = response.data;
+      // const trueFirst = arr.sort((a, b) => Number(b.done) - Number(a.done))
+      const falseFirst = arr.sort((a, b) => Number(a.done) - Number(b.done))
+      setToDos(falseFirst);
     })
   }
 
@@ -63,18 +64,18 @@ export default function ToDos() {
       {currentUser && <>
         <section className="row page-body">
           <section className="sidebar-container col-md-2">
-          <div className="quick-add-container mb-3 mt-2">
-                <button className="btn btn-custom mr-0" onClick={() => setShowCreate(!showCreate)}>
-                  {!showCreate ? 'quick add' : 'Cancel'}
-                </button>
-                <div className="create-container">
-                  {showCreate &&
-                    <ToDoCreate
-                      getToDos={getToDos}
-                      setShowCreate={setShowCreate} />
-                  }
-                </div>
+            <div className="quick-add-container mb-3 mt-2">
+              <button className="btn btn-custom mr-0" onClick={() => setShowCreate(!showCreate)}>
+                {!showCreate ? 'quick add' : 'Cancel'}
+              </button>
+              <div className={showCreate ? "create-container" : "create-container no-border"}>
+                {showCreate &&
+                  <ToDoCreate
+                    getToDos={getToDos}
+                    setShowCreate={setShowCreate} />
+                }
               </div>
+            </div>
           </section>
 
           <section className="main-content col-md-10">
@@ -94,20 +95,20 @@ export default function ToDos() {
                 </div>
               </div> */}
               <div className="col">
-              <FilterToDo setFilter={setFilter} setCompletion={setCompletion} toDos={toDos} />
+                <FilterToDo setFilter={setFilter} setCompletion={setCompletion} toDos={toDos} />
 
-              {/* <ProgressBar now={toDos.filter(x => x.done === true).length} total={toDos.length}/> */}
+                {/* <ProgressBar now={toDos.filter(x => x.done === true).length} total={toDos.length}/> */}
+                <div id="checklist">
+                  {filterBySelections(filter, completion)}
+                </div>
 
-              {filterBySelections(filter, completion)}
-              
-
-              {filter !== 0 && toDos.filter(x => x.categoryId === filter).length === 0 &&
-                <h5 className="alert alert-warning text-dark col-md-7 offset-mb-3">
-                  There are no results to display for this category.
-                </h5>
-              }
-            </div>
-            <div className="disappearing-column col-md-3"></div>
+                {filter !== 0 && toDos.filter(x => x.categoryId === filter).length === 0 &&
+                  <h5 className="alert alert-warning text-dark col-md-7 offset-mb-3">
+                    There are no results to display for this category.
+                  </h5>
+                }
+              </div>
+              <div className="disappearing-column col-md-3"></div>
             </article>
           </section>
 
